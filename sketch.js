@@ -70,7 +70,8 @@ function draw() {
   drawSprites();
 
   if(foodstock > 0){
-  text("BRuhhhh YoU CaN Feed me "+ foodstock + " TiMeS", 150, 100);
+    text("BRuhhhh YoU CaN Feed me "+ foodstock + " TiMeS", 150, 100);
+    text("BRuhhhh UsE SpACe To Feed me ", 170, 50);
   }
 
   if(foodstock < 30){
@@ -82,9 +83,12 @@ function draw() {
         Food:30
         
       })
-    dooogie.addImage("dog1", dogSitting);
-
+      dooogie.addImage("dog1", dogSitting);
     }
+    if(foodstock == 30){
+    dooogie.addImage("dog1", dogSitting);
+    }
+    
     if (keyWentDown("r")){
       data = foodstock += 1;
       database.ref('/').set({
